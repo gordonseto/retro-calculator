@@ -71,6 +71,9 @@ class ViewController: UIViewController {
     @IBAction func onEqualPressed(sender: AnyObject) {
         processOperation(currentOperation)
     }
+    @IBAction func onClearPressed(sender: AnyObject) {
+        clearCalculator()
+    }
     
     func processOperation(op: Operation){
         playSound()
@@ -117,6 +120,15 @@ class ViewController: UIViewController {
             btnSound.stop()
         }
         btnSound.play()
+    }
+    
+    func clearCalculator(){
+        runningNumber = ""
+        leftValStr = ""
+        rightValStr = ""
+        currentOperation = Operation.Empty
+        result = ""
+        outputLabel.text = "0"
     }
 }
 
